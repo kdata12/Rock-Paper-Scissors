@@ -24,7 +24,7 @@ function getButtonClass(e) {
  * @param play playRound() function
  * @returns 
  */
-function game(userChoice, computerChoice) {
+function game(userChoie, computerChoice) {
     playRound(userChoice, computerChoice)
     updateStats(userChoice, computerChoice)
 }
