@@ -24,6 +24,26 @@ span.close {
     font-weight: bold;
 }
 
+.close:hover {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.css1 {
+    text-align: center;
+}
+
+.restart {
+    border-radius: 12px;
+    font-size: 20px;
+    margin-right: 13px;
+    margin-top: 10px;
+}
+
+.restart:active {
+    background-color: rgb(199, 199, 199);
+}
 
 .modal-content {
     background-color: rgb(160, 214, 255);
