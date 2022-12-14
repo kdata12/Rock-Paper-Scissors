@@ -7,13 +7,8 @@ allButtons.forEach(button => button.addEventListener('click', getButtonClass))
 //get the class of button pressed
 function getButtonClass(e) {
     const playerChoice = this.dataset.choices;
-    
-    //user input into playRound()
+    //user input into game()
     game(playerChoice, getComputerChoice());
-    
-
-    //
-
     e.stopPropagation();
 }
 
@@ -24,9 +19,31 @@ function getButtonClass(e) {
  * @param play playRound() function
  * @returns 
  */
-function game(userChoie, computerChoice) {
-    playRound(userChoice, computerChoice)
-    updateStats(userChoice, computerChoice)
+function game(userChoice, computerChoice) {
+    displayResult(playRound(userChoice, computerChoice));
+    updateStats(userChoice, computerChoice);
+    checkForWinner();
+}
+
+function checkForWinner() {
+    if (score[0] > score[1]) {
+        console.log(`You won! Final score ${score[0]} vs ${score[1]}.`);
+    } else if (score[0] === score[1]) {
+        console.log(`It's a tie!Final score ${score[0]} vs ${score[1]}.`);
+    } else { 
+        console.log(`You lost! Final score ${score[0]} vs ${score[1]}`);
+    }
+}
+
+
+function displayResult(message) {
+    const result = document.querySelector('#result');
+
+    if (result.textContent.length >= 3) {
+        result.textContent = "Game Result: "
+    }
+    result.textContent += message
+
 }
 
 function updateStats(userChoice, computerChoice) {
@@ -123,12 +140,4 @@ function updateScore(score, winner) {
     } else {
         score[1] += 1;
     }
-}
-
-if (score[0] > score[1]) {
-    console.log(`You won! Final score ${score[0]} vs ${score[1]}.`);
-} else if (score[0] === score[1]) {
-    console.log(`It's a tie!Final score ${score[0]} vs ${score[1]}.`);
-} else { 
-    console.log(`You lost! Final score ${score[0]} vs ${score[1]}`);
 }
