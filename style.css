@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(195, 246, 167);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    color: antiquewhite;
+}
