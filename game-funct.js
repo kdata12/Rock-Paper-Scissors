@@ -1,4 +1,9 @@
-        
+//select button
+
+
+
+
+
 function getComputerChoice() {
     const choice = ["Rock", "Paper", "Scissor"];
     let index = Math.floor(Math.random() * (choice.length));

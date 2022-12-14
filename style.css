@@ -46,14 +46,21 @@ header {
     border-radius: 10px;
     font-size: 100px;
     outline: none;
+    box-shadow: 0 10px #999;
 }
 #rock-button:hover,
 #paper-button:hover,
 #scissor-button:hover {
-    background-color: rgb(154, 158, 248);
+    background-color: rgb(112, 118, 244);
 }
 
-
+#rock-button:active,
+#paper-button:active,
+#scissor-button:active {
+    background-color: rgb(71, 4, 255);
+    box-shadow: 0 5px #666;
+    transform: translateY(10px);
+}
 
 
 .click {
