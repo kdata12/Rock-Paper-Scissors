@@ -12,6 +12,11 @@ function getButtonClass(e) {
     e.stopPropagation();
 }
 
+//close button
+
+//start-over button
+
+
 /**
  * This is a game function it will:
  * -display what user and computer picks to scoreboard
@@ -29,14 +34,12 @@ function checkForWinner() {
     if (score[0] != 5 && score[1] != 5) return;
     const modalText = document.querySelector('.modal-text')
     if (score[0] > score[1]) {
-
-        const winMessage = "You Won!!"
+        modalText.textContent = "You Won!!"
     } else { 
-        const lostMessage = "You lost!"
+        modalText.textContent = "You Lost!"
     }
     const modal = document.querySelector('.modal');
     modal.style.display = "block";
-
 }
 
 
