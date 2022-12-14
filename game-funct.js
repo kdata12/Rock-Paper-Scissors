@@ -1,7 +1,81 @@
-//select button
+//select all buttons
+const allButtons = document.querySelectorAll('button');
 
+//iterate through each button to see which one was pressed
+allButtons.forEach(button => button.addEventListener('click', getButtonClass))
 
+//get the class of button pressed
+function getButtonClass(e) {
+    const playerChoice = this.dataset.choices;
+    
+    //user input into playRound()
+    game(playerChoice, getComputerChoice());
+    
 
+    //
+
+    e.stopPropagation();
+}
+
+/**
+ * This is a game function it will:
+ * -display what user and computer picks to scoreboard
+ * -
+ * @param play playRound() function
+ * @returns 
+ */
+function game(userChoice, computerChoice) {
+    playRound(userChoice, computerChoice)
+    updateStats(userChoice, computerChoice)
+}
+
+function updateStats(userChoice, computerChoice) {
+    //updates user choice
+    updateUserChoice(userChoice);
+    //updates user score
+    updateUserScore();
+    //update computer choice
+    updateCompChoice(computerChoice);
+    //update computer score
+    updateCompScore();    
+}
+
+function updateUserScore() {
+    let userScore = score[0];
+    const user = document.querySelector('.your-score');
+
+    if (user.textContent.length >= 2) {
+        user.textContent = "Your Score: "
+    }
+    user.textContent += ` ${userScore}`
+}
+
+function updateCompScore() {
+    let compScore = score[1];
+    const comp = document.querySelector('.comp-score');
+
+    if (comp.textContent.length >= 2) {
+        comp.textContent = "Computer Score: "
+    }
+    comp.textContent += ` ${compScore}`
+}
+
+function updateUserChoice(userChoice) {
+    const user = document.querySelector('.your-choice');
+    //removes old choice
+    if (user.textContent.length >= 2) {
+        user.textContent = "You: "
+    }
+    user.textContent += ` ${userChoice}`
+}
+
+function updateCompChoice(computerChoice) {
+    const comp= document.querySelector('.comp-choice');
+    if (comp.textContent.length >= 2) {
+        comp.textContent = "Computer: "
+    }
+    comp.textContent += ` ${computerChoice}`;
+}
 
 
 function getComputerChoice() {
@@ -36,7 +110,7 @@ function playRound(playerSelection, computerSelection) {
             roundWinner = "Player";
             message = "You Won! Scissor beats Paper"
         }
-        updateScore(score, roundWinner);
+        updateScore(score,roundWinner);
         return message;
     }
 }
