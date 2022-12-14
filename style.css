@@ -7,8 +7,71 @@ body {
 header {
     display: flex;
     justify-content: center;
+    font-size: 30px;
+    color: rgb(188, 3, 216);
 }
 
-.text {
-    color: antiquewhite;
+.game-result {
+    display: flex;
+    justify-content: center;
+}
+
+#result {
+    color: rgb(139, 30, 206);
+    font-size: 32px;
+}
+
+.three-buttons {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    font-size: 50px;
+}
+
+#rock-button {
+    background-color: beige;
+}
+
+#rock-button,
+#paper-button,
+#scissor-button {
+    display: block;
+    width: 200px;
+    height: 200px;
+    border: none;
+    padding: 40px;
+    font-size: 30px;
+    background-color: rgb(93, 98, 255);
+    border-radius: 10px;
+    font-size: 100px;
+    outline: none;
+}
+#rock-button:hover,
+#paper-button:hover,
+#scissor-button:hover {
+    background-color: rgb(154, 158, 248);
+}
+
+
+
+
+.click {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+}
+
+.containerx1 {
+    padding: 20px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    margin-top: 20px;
+}
+
+.your-choice {
+    margin-right: 70px;
 }
