@@ -26,13 +26,17 @@ function game(userChoice, computerChoice) {
 }
 
 function checkForWinner() {
+    if (score[0] != 5 && score[1] != 5) return;
+    const modalText = document.querySelector('.modal-text')
     if (score[0] > score[1]) {
-        console.log(`You won! Final score ${score[0]} vs ${score[1]}.`);
-    } else if (score[0] === score[1]) {
-        console.log(`It's a tie!Final score ${score[0]} vs ${score[1]}.`);
+
+        const winMessage = "You Won!!"
     } else { 
-        console.log(`You lost! Final score ${score[0]} vs ${score[1]}`);
+        const lostMessage = "You lost!"
     }
+    const modal = document.querySelector('.modal');
+    modal.style.display = "block";
+
 }
 
 
