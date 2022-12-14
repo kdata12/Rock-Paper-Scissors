@@ -11,10 +11,16 @@ function getButtonClass(e) {
     game(playerChoice, getComputerChoice());
     e.stopPropagation();
 }
+//query modal
+const modal = document.querySelector('.modal');
 
 //close button
+function closeModal() {
+    modal.style.display = "none";
+};
 
 //start-over button
+
 
 
 /**
